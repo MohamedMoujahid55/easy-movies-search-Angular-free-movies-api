@@ -1,0 +1,125 @@
+<div class="backgroundimg" id="bgimg">
+    <div class="box">
+        <h3 style="font-size:4vw;">Look For Your Movies, Series ...</h3>
+                <label for="statictitle" class="sr-only">title</label>
+                <input class="form-control mr-sm-4" type="text" placeholder="Title"
+                        ngModel name="title"
+                        #title="ngModel"
+                        (change)="onClickMe(title)"
+                        >
+                <a type="submit" class="btn"  [routerLink]="['/results', mySearshtitle]">Search </a>           
+    </div>
+</div>
+<p class="center-title" id="newreleases">New Releases</p>
+<hr>
+<div class="d-flex justify-content-center">
+    <div class="row">  
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details1?.Poster}}" class="card-img-top" alt="...">
+                    <div class="overlay">
+                        <h2>{{Details1?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details1?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+                  <h5 class="center-card-title">{{Details1?.Title}}</h5>       
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details2?.Poster}}" class="card-img-top" alt="...">
+                    <div class="overlay">
+                        <h2>{{Details2?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details2?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+              <h5 class="center-card-title">{{Details2?.Title}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details3?.Poster}}" class="card-img-top" alt="...">
+                    <div class="overlay">
+                        <h2>{{Details3?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details3?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+              <h5 class="center-card-title">{{Details3?.Title}}</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<p class="center-title" id="dailyrecomendation">Daily recommendation</p>
+<hr>
+<div class="d-flex justify-content-center">
+    <div class="row ">
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details4?.Poster}}" class="card-img-top" alt="..." *ngIf="Details4?.Poster != 'N/A'; else Nopic4">
+                    <ng-template #Nopic4>
+                        <img src="../../../assets/NoPosterFound.jpg" class="card-img-top" alt="Responsive image">
+                    </ng-template>
+                    <div class="overlay">
+                        <h2>{{Details4?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details4?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+                  <h5 class="center-card-title">{{Details4?.Title}}</h5>       
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details5?.Poster}}" class="card-img-top" alt="..." *ngIf="Details5?.Poster != 'N/A'; else Nopic5">
+                    <ng-template #Nopic5>
+                        <img src="../../../assets/NoPosterFound.jpg" class="card-img-top" alt="Responsive image">
+                    </ng-template>
+                    <div class="overlay">
+                        <h2>{{Details5?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details5?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+              <h5 class="center-card-title">{{Details5?.Title}}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 py-3 py-sm-0">
+            <div class="card" style="width: 18rem;">
+                <div class="hovereffect">
+                    <img src="{{Details6?.Poster}}" class="card-img-top" alt="..." *ngIf="Details6?.Poster != 'N/A'; else Nopic6">
+                    <ng-template #Nopic6>
+                        <img src="../../../assets/NoPosterFound.jpg" class="card-img-top" alt="Responsive image">
+                    </ng-template>
+                    <div class="overlay">
+                        <h2>{{Details6?.Title}}</h2>
+                        <a class="info" [routerLink]="['/results', Details6?.Title]">Details</a>
+                    </div>
+                </div>      
+                <div class="card-body">
+              <h5 class="center-card-title">{{Details6?.Title}}</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <a class="gototopbtn" href="#bgimg">
+        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
+    </a>
+</div>
+
