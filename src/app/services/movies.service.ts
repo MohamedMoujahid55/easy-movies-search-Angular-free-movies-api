@@ -11,11 +11,11 @@ export class MoviesService {
   constructor(private http : HttpClient) { }
 
   getMovieBytitle(title){
-    let url = 'http://www.omdbapi.com/?s='+title+'&apikey=3818b5a8&page=1';
+    let url = 'https://www.omdbapi.com/?s='+title+'&apikey=3818b5a8&page=1';
     return this.http.get(url);
   }
   getMovieAllDetails(title){
-    let url = 'http://www.omdbapi.com/?t='+title+'&apikey=3818b5a8&page=1';
+    let url = 'https://www.omdbapi.com/?t='+title+'&apikey=3818b5a8&page=1';
     return this.http.get(url);
   }
 
